@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fénykép Előhívás Megrendelő</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <center>
+        <img name="logo" id="logo" src="logo.png">
+    </center>
+    <h1>Fénykép Előhívás Megrendelő</h1>
+    <center>
+        <h3>
+            Az alábbi űrlapon töltse ki a mezőket, majd a megjelenő fénykép kiválasztásnál válassza ki a megfelelő képet.<br>
+            Fontos, hogy egyszerre egy képet tud kiválasztani, de a További képek hozzáadása gomb segítségével ez a lista bővíthető.
+        </h3>
+    </center>
+    <form id="orderForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="name">Név:</label> 
+        <input type="text" id="name" name="name" required> 
+        <label for="phone">Telefonszám:</label> 
+        <input type="tel" id="phone" name="phone" required>
+        <label for="email">E-mail cím:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="photoUploadSection" style="display: none;">
+            <div class="photoUpload">
+                <input type="file" name="photos[]" accept="image/*" required onchange="previewImage(event)">
+                <img src="placeholder.png" alt="Előnézet" class="preview">
+                <label for="quantity">Mennyiség:</label>
+                <input type="number" name="quantity[]" value="1" min="1">
+                <label for="size">Méret:</label>
+                <select name="size[]">
+                    <option value="9x13">9x13</option>
+                    <option value="10x15">10x15</option>
+                </select>
+                <button type="button" class="deletePhoto"><img src="trash-icon.png" alt="Törlés"></button>
+            </div>
+        </div>
+        <button type="button" id="addPhoto">További képek hozzáadása</button>
+        <button type="submit">Megrendelés</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

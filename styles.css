@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    background-image: url("bgimg_s.jpg");
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+    width: 10%;
+    height: 10%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], 
+input[type="tel"], 
+input[type="email"], 
+input[type="file"], 
+input[type="number"],
+select {
+    width: 97%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.photoUpload {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.photoUpload input,
+.photoUpload select,
+.photoUpload .preview {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.photoUpload .preview {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
+
+.photoUpload label {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    align-self: center;
+}
+
+.deletePhoto {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    align-self: center;
+}
+
+.deletePhoto img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Reszponzív stílusok */
+@media (max-width: 600px) {
+    .photoUpload {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .photoUpload input,
+    .photoUpload select,
+    .photoUpload .preview {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
